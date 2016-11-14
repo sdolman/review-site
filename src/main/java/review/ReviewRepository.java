@@ -1,5 +1,6 @@
 package review;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,8 +24,12 @@ public class ReviewRepository {
 		return reviewsById.get(id);
 	}
 	
-	public HashMap<Long, Review> findAll() {
+	/*public HashMap<Long, Review> findAll() {
 		return (HashMap<Long, Review>) reviewsById;
+	}*/
+	
+	public Collection<Review> findAll() {
+		return reviewsById.values();
 	}
 
 }
