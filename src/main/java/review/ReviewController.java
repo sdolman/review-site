@@ -1,7 +1,8 @@
 package review;
 
 import java.util.Collection;
-import java.util.HashMap;
+
+import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ReviewController {
 	
-	private ReviewRepository repository = new ReviewRepository();
+	@Resource
+	private ReviewRepository repository;
 	@RequestMapping("/review")
     public String displayReview(@RequestParam("id") long id, Model model) {
         
